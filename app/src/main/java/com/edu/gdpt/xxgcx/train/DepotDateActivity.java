@@ -3,11 +3,11 @@ package com.edu.gdpt.xxgcx.train;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DepotDataActivity extends AppCompatActivity {
+public class DepotDateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_depot_data);
+        setContentView(R.layout.activity_depot_date);
     }
 }
