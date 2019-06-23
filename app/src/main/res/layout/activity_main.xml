@@ -69,7 +69,7 @@
             android:id="@+id/rbtn_main_station"
             android:drawableTop="@drawable/rbtn_station_bg"
             android:gravity="center"
-            android:text="车站"
+            android:text="余票"
             android:button="@null"
             android:textColor="@drawable/depot_text_bg"/>
         <RadioButton

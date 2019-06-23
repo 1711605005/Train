@@ -17,13 +17,14 @@ public class JsonParse {//单例模式 单个对象 （对象产生：构造方�
         }
         return instance;
     }
-    public List<QueryBean>getQueryList(String json){
+    public List<ABean.ResultBean.ListBean>getDepotList(String json){
         //使用gson库解析Json数据
         Gson gson=new Gson();
+        gson.fromJson(json,ABean.class);
         //创建一个TypeToken的匿名数据子类对象，并调用对象的getType()方法
-        Type listType=new TypeToken<List<QueryBean>>(){}.getType();
+        Type listType=new TypeToken<List<ABean.ResultBean.ListBean>>(){}.getType();
         //把获取到的信息集合存到queryList中
-        List<QueryBean>queryList =gson.fromJson(json,listType);
-        return queryList;
+        List<ABean.ResultBean.ListBean>depotList =gson.fromJson(json,listType);
+        return depotList;
     }
 }

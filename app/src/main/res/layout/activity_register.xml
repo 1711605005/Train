@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RegisterActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#ffffff">
+    <com.edu.gdpt.xxgcx.train.Widget.CircleImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/head"
+        android:layout_marginTop="50dp"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:id="@+id/edt_reg_name"
+        android:hint="QQ号/手机号/邮箱"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:background="@drawable/edt_login_background"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:inputType="textPassword"
+        android:id="@+id/edt_reg_psw"
+        android:hint="输入密码"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_login_background"/>
+    <EditText
+        android:layout_width="300dp"
+        android:inputType="textPassword"
+        android:layout_height="55dp"
+        android:id="@+id/edt_reg_again"
+        android:hint="确认密码"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_login_background"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/me_btn_bg"
+        android:id="@+id/btn_reg_register"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:text="注  册"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>

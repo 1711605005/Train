@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         rg_main_all.check(R.id.rbtn_main_station);
-                        tv_main_title.setText("车站查询");
+                        tv_main_title.setText("余票查询");
                         break;
                     case 3:
                         rg_main_all.check(R.id.rbtn_main_me);

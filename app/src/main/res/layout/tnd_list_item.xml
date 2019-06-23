@@ -8,17 +8,17 @@
         android:layout_height="40dp"
         android:layout_weight="1"
         android:textSize="16sp"
-        android:textColor="#346592"
-        android:text="车次"
-        android:id="@+id/tv_item_car"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_num"
+        android:text="序号"
         android:gravity="center"/>
     <TextView
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:textSize="16sp"
-        android:textColor="#346592"
-        android:id="@+id/tv_item_type"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_type"
         android:text="类型"
         android:gravity="center"/>
     <TextView
@@ -26,36 +26,36 @@
         android:layout_height="40dp"
         android:layout_weight="1"
         android:textSize="16sp"
-        android:textColor="#346592"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_start"
         android:text="出发站"
-        android:id="@+id/tv_item_station"
         android:gravity="center"/>
     <TextView
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:textSize="16sp"
-        android:textColor="#346592"
-        android:text="到达站"
-        android:id="@+id/tv_item_endstation"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:textColor="#346592"
-        android:text="出发时间"
-        android:id="@+id/tv_item_start"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:textColor="#346592"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_atime"
         android:text="到达时间"
-        android:id="@+id/tv_item_end"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_stime"
+        android:text="出发时间"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="#495820"
+        android:id="@+id/tv_tnd_stop"
+        android:text="停留时间"
         android:gravity="center"/>
 
 </LinearLayout>

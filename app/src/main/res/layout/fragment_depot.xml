@@ -167,5 +167,21 @@
         android:elevation="10dp"
         android:text="查    询"
         android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="#004499"
+        android:text="- - - - - - -历史查询- - - - - - -"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tv_depot_hc"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
 
 </LinearLayout>

@@ -13,8 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import com.edu.gdpt.xxgcx.train.DepotDataActivity;
+import com.edu.gdpt.xxgcx.train.Activity.DepotDateActivity;
 import com.edu.gdpt.xxgcx.train.R;
 
 /**
@@ -49,7 +48,7 @@ public class DepotFragment extends Fragment implements View.OnClickListener {
         btn_depot_query = (Button) view.findViewById(R.id.btn_depot_query);
 
         btn_depot_query.setOnClickListener(this);
-
+        ll_depot_turn.setOnClickListener(this);
 
 
         return view;
@@ -59,7 +58,18 @@ public class DepotFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_depot_query:
-                startActivity(new Intent(getContext(), DepotDataActivity.class));
+                Intent intent=new Intent(getContext(), DepotDateActivity.class);
+                String startText=edt_depot_start.getText().toString().trim();
+                String endText=edt_depot_end.getText().toString().trim();
+                intent.putExtra("startText",startText);
+                intent.putExtra("endText",endText);
+                startActivity(intent);
+                break;
+            case R.id.ll_depot_turn:
+                String s=edt_depot_start.getText().toString().trim();
+                String e=edt_depot_end.getText().toString().trim();
+                edt_depot_start.setText(e);
+                edt_depot_end.setText(s);
                 break;
         }
     }
