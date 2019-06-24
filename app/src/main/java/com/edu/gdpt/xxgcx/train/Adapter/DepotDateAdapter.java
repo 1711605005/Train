@@ -13,12 +13,22 @@ import com.edu.gdpt.xxgcx.train.R;
 
 import java.util.List;
 
-public class DepotDateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class  DepotDateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<ABean.ResultBean.ListBean> dbl;//列表数据
+//    private List<ABean.ResultBean>drbl;
+//    private List<ABean.ResultBean.ListBean>drll;
     public void setDate(List<ABean.ResultBean.ListBean> dbl){//初始化数据
         this.dbl=dbl;
         notifyDataSetChanged();
     }
+//    public void setDater(List<ABean.ResultBean>dbrl){
+//        this.drbl=dbrl;
+//        notifyDataSetChanged();
+//    }
+//    public void setDatel(List<ABean.ResultBean.ListBean>drll){
+//        this.drll=drll;
+//        notifyDataSetChanged();
+//    }
 
     @NonNull
     @Override//创建视图
@@ -31,6 +41,9 @@ public class DepotDateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override//绑定数据
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         final ABean.ResultBean.ListBean bean=dbl.get(i);
+//        final ABean.ResultBean rBean=drbl.get(i);
+//        final ABean.ResultBean.ListBean lBean=drll.get(i);
+
         ((DepotViewHolder)viewHolder).car.setText(bean.getTrainno());
         ((DepotViewHolder)viewHolder).type.setText(bean.getType());
         ((DepotViewHolder)viewHolder).station.setText(bean.getStation());

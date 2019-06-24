@@ -32,6 +32,7 @@ public class DepotDateActivity extends AppCompatActivity {
     private RecyclerView rv_depot_context;
     private DepotDateAdapter adapter;
     private MHandler mHandler;
+    private String startText,endText;
 
 
     @Override
@@ -42,8 +43,8 @@ public class DepotDateActivity extends AppCompatActivity {
         initView();
         initDate();
         Intent intent=getIntent();
-        String startText=intent.getStringExtra("startText");
-        String endText=intent.getStringExtra("endText");
+        startText=intent.getStringExtra("startText");
+        endText=intent.getStringExtra("endText");
         tv_depot_start.setText(startText);
         tv_depot_end.setText(endText);
 
@@ -52,7 +53,7 @@ public class DepotDateActivity extends AppCompatActivity {
     private void initDate() {
         OkHttpClient okHttpClient=new OkHttpClient();
         final Request request=new Request.Builder().url(Constant.WEB_DEPOT+Constant.DEPOT_START
-        +tv_depot_start.getText().toString()+Constant.DEPOT_END+tv_depot_end.getText().toString()).build();
+        +startText+Constant.DEPOT_END+endText).build();
         Call call=okHttpClient.newCall(request);
         //开启异步线程访问网络
         call.enqueue(new Callback() {
@@ -89,8 +90,9 @@ public class DepotDateActivity extends AppCompatActivity {
                     if (msg.obj !=null){
                         String vlResult=(String) msg.obj;
                         //使用Gson解析数据
-                        List<ABean.ResultBean.ListBean>depotList= JsonParse.getInstance().getDepotList(vlResult);
-                        adapter.setDate(depotList);//适配器数赋值
+                   /*     List<ABean.ResultBean.ListBean>depotList= JsonParse.getInstance().getDepotList(vlResult);*/
+                        ABean aBean = new Gson().fromJson(vlResult, ABean.class);
+                        adapter.setDate(aBean.getResult().getList());//适配器数赋值
                     }
                     break;
             }
