@@ -10,10 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.edu.gdpt.xxgcx.train.Adapter.DepotDateAdapter;
-import com.edu.gdpt.xxgcx.train.Bean.ABean;
+import com.edu.gdpt.xxgcx.train.Bean.DepotBean;
 import com.edu.gdpt.xxgcx.train.Bean.Constant;
-import com.edu.gdpt.xxgcx.train.Bean.JsonParse;
-import com.edu.gdpt.xxgcx.train.Bean.QueryBean;
 import com.edu.gdpt.xxgcx.train.R;
 import com.google.gson.Gson;
 import com.squareup.okhttp.Call;
@@ -23,7 +21,6 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
-import java.util.List;
 
 public class DepotDateActivity extends AppCompatActivity {
 
@@ -32,7 +29,7 @@ public class DepotDateActivity extends AppCompatActivity {
     private RecyclerView rv_depot_context;
     private DepotDateAdapter adapter;
     private MHandler mHandler;
-    private String startText,endText;
+    private String startText,endText,Data;
 
 
     @Override
@@ -41,19 +38,23 @@ public class DepotDateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_depot_date);
         mHandler=new MHandler();
         initView();
-        initDate();
+
         Intent intent=getIntent();
         startText=intent.getStringExtra("startText");
         endText=intent.getStringExtra("endText");
+        Data=intent.getStringExtra("Data");
         tv_depot_start.setText(startText);
         tv_depot_end.setText(endText);
-
+        initDate();
     }
 
     private void initDate() {
+        String start=startText;
+        String end=endText;
+        String data=Data;
         OkHttpClient okHttpClient=new OkHttpClient();
         final Request request=new Request.Builder().url(Constant.WEB_DEPOT+Constant.DEPOT_START
-        +startText+Constant.DEPOT_END+endText).build();
+        +start+Constant.DEPOT_END+end+Constant.STATION_DATE+data).build();
         Call call=okHttpClient.newCall(request);
         //开启异步线程访问网络
         call.enqueue(new Callback() {
@@ -90,9 +91,9 @@ public class DepotDateActivity extends AppCompatActivity {
                     if (msg.obj !=null){
                         String vlResult=(String) msg.obj;
                         //使用Gson解析数据
-                   /*     List<ABean.ResultBean.ListBean>depotList= JsonParse.getInstance().getDepotList(vlResult);*/
-                        ABean aBean = new Gson().fromJson(vlResult, ABean.class);
-                        adapter.setDate(aBean.getResult().getList());//适配器数赋值
+                   /*     List<DepotBean.ResultBean.ListBean>depotList= JsonParse.getInstance().getDepotList(vlResult);*/
+                        DepotBean depotBean = new Gson().fromJson(vlResult, DepotBean.class);
+                        adapter.setDate(depotBean.getResult().getList());//适配器数赋值
                     }
                     break;
             }

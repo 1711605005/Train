@@ -2,7 +2,7 @@ package com.edu.gdpt.xxgcx.train.Bean;
 
 import java.util.List;
 
-public class ABean {
+public class DepotBean {
 
     /**
      * status : 0

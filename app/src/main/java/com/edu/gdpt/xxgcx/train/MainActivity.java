@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.edu.gdpt.xxgcx.train.Fragment.DepotFragment;
 import com.edu.gdpt.xxgcx.train.Fragment.MeFragment;
-import com.edu.gdpt.xxgcx.train.Fragment.StationFragment;
+import com.edu.gdpt.xxgcx.train.Fragment.TicketFragment;
 import com.edu.gdpt.xxgcx.train.Fragment.TrainNumFragment;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViewPager() {
         fragments.add(new DepotFragment());
         fragments.add(new TrainNumFragment());
-        fragments.add(new StationFragment());
+        fragments.add(new TicketFragment());
         fragments.add(new MeFragment());
 
         vp_main_body.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {

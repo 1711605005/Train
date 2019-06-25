@@ -27,7 +27,6 @@ public class DepotFragment extends Fragment implements View.OnClickListener {
     public LinearLayout ll_depot_turn;
     public EditText edt_depot_data;
     public CheckBox cb_depot_train;
-    public CheckBox cb_depot_surplus;
     public Button btn_depot_query;
 
     public DepotFragment() {
@@ -58,9 +57,12 @@ public class DepotFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_depot_query:
+                submit();
                 Intent intent=new Intent(getContext(), DepotDateActivity.class);
                 String startText=edt_depot_start.getText().toString().trim();
                 String endText=edt_depot_end.getText().toString().trim();
+                String Data=edt_depot_data.getText().toString().trim();
+                intent.putExtra("Data",Data);
                 intent.putExtra("startText",startText);
                 intent.putExtra("endText",endText);
                 startActivity(intent);
@@ -78,21 +80,16 @@ public class DepotFragment extends Fragment implements View.OnClickListener {
         // validate
         String start = edt_depot_start.getText().toString().trim();
         if (TextUtils.isEmpty(start)) {
-            Toast.makeText(getContext(), "start不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "出发站不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
         String end = edt_depot_end.getText().toString().trim();
         if (TextUtils.isEmpty(end)) {
-            Toast.makeText(getContext(), "end不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "到达站不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String data = edt_depot_data.getText().toString().trim();
-        if (TextUtils.isEmpty(data)) {
-            Toast.makeText(getContext(), "data不能为空", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         // TODO validate success, do something
 

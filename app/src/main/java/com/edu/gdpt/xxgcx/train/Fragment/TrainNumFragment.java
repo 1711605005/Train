@@ -46,40 +46,22 @@ public class TrainNumFragment extends Fragment implements View.OnClickListener {
         tv_tn_hc = (TextView) view.findViewById(R.id.tv_tn_hc);
         btn_tn_query.setOnClickListener(this);
 
-        initView();
+
         return view;
     }
 
-    private void initView() {
-
-    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_tn_query:
                 Intent intent=new Intent(getActivity().getApplicationContext(), TrainNumDataActivity.class);
+                String trainNum=edt_tn_tn.getText().toString().trim();
+                String Date=edt_tn_data.getText().toString().trim();
+                intent.putExtra("trainNum",trainNum);
+                intent.putExtra("Date",Date);
                 startActivity(intent);
                 break;
         }
-    }
-
-    private void submit() {
-        // validate
-        String tn = edt_tn_tn.getText().toString().trim();
-        if (TextUtils.isEmpty(tn)) {
-            Toast.makeText(getContext(), "tn不能为空", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        String data = edt_tn_data.getText().toString().trim();
-        if (TextUtils.isEmpty(data)) {
-            Toast.makeText(getContext(), "data不能为空", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // TODO validate success, do something
-
-
     }
 }
