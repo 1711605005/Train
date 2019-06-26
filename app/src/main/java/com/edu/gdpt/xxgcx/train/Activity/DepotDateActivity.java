@@ -7,6 +7,8 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.edu.gdpt.xxgcx.train.Adapter.DepotDateAdapter;
@@ -30,6 +32,7 @@ public class DepotDateActivity extends AppCompatActivity {
     private DepotDateAdapter adapter;
     private MHandler mHandler;
     private String startText,endText,Data;
+    private LinearLayout ll_depot_back;
 
 
     @Override
@@ -80,6 +83,13 @@ public class DepotDateActivity extends AppCompatActivity {
         rv_depot_context.setLayoutManager(new LinearLayoutManager(this));
         adapter=new DepotDateAdapter();
         rv_depot_context.setAdapter(adapter);
+        ll_depot_back=findViewById(R.id.ll_depot_back);
+        ll_depot_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DepotDateActivity.this.finish();
+            }
+        });
     }
 
     public class MHandler extends Handler {

@@ -39,7 +39,7 @@
                     android:background="@null"
                     android:gravity="center"
                     android:textColor="#000000"
-                    android:text="新会"
+                    android:text="北京"
                     android:textSize="20sp"
                     android:layout_marginBottom="5sp"/>
             </LinearLayout>
@@ -73,7 +73,7 @@
                     android:background="@null"
                     android:gravity="center"
                     android:textColor="#000000"
-                    android:text="佛山"
+                    android:text="杭州"
                     android:textSize="20sp"
                     android:layout_marginBottom="5sp"/>
             </LinearLayout>
@@ -148,8 +148,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
                 android:text="高铁票"
-                android:id="@+id/cb_depot_train"
-                android:clickable="false"/>
+                android:id="@+id/cb_depot_train"/>
         </RelativeLayout>
         <View
             android:layout_width="match_parent"

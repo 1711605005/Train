@@ -1,6 +1,7 @@
 package com.edu.gdpt.xxgcx.train.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.edu.gdpt.xxgcx.train.Activity.TicketDataActivity;
 import com.edu.gdpt.xxgcx.train.R;
 
 /**
@@ -57,6 +59,17 @@ public class TicketFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_station_query:
+                submit();
+                Intent intent=new Intent(getContext(), TicketDataActivity.class);
+                String st=edt_station_start.getText().toString().trim();
+                String et=edt_station_end.getText().toString().trim();
+                String date=edt_station_data.getText().toString().trim();
+
+                intent.putExtra("st",st);
+                intent.putExtra("et",et);
+                intent.putExtra("date",date);
+
+                startActivity(intent);
 
                 break;
             case R.id.tv_station_turn:
@@ -79,6 +92,12 @@ public class TicketFragment extends Fragment implements View.OnClickListener {
         String end = edt_station_end.getText().toString().trim();
         if (TextUtils.isEmpty(end)) {
             Toast.makeText(getContext(), "目的站不能为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String date = edt_station_data.getText().toString().trim();
+        if (TextUtils.isEmpty(date)) {
+            Toast.makeText(getContext(), "日期不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 

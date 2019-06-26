@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class TrainNumDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_train_num_data);
+        tHolder=new THolder();
         initView();
         Intent intent=getIntent();
         trainNum=intent.getStringExtra("trainNum");
@@ -75,6 +77,7 @@ public class TrainNumDataActivity extends AppCompatActivity {
         tv_tn_lt = (TextView) findViewById(R.id.tv_tn_lt);
         rv_tnd_context = (RecyclerView) findViewById(R.id.rv_tnd_context);
         ll_tnd_back=(LinearLayout)findViewById(R.id.ll_tnd_back);
+        rv_tnd_context.setLayoutManager(new LinearLayoutManager(this));
         adapter=new TrainNumAdapter();
         rv_tnd_context.setAdapter(adapter);
         ll_tnd_back.setOnClickListener(new View.OnClickListener() {

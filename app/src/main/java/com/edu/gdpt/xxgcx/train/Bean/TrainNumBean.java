@@ -148,14 +148,14 @@ public class TrainNumBean {
              * costtimetxt : 6时8分
              */
 
-            private int sequenceno;
+            private String sequenceno;
             private String station;
             private int day;
             private String arrivaltime;
             private String departuretime;
-            private int stoptime;
-            private int costtime;
-            private int distance;
+            private String stoptime;
+            private String costtime;
+            private String distance;
             private int isend;
             private Object pricesw;
             private Object pricetd;
@@ -170,11 +170,11 @@ public class TrainNumBean {
             private Object priceed;
             private String costtimetxt;
 
-            public int getSequenceno() {
+            public String getSequenceno() {
                 return sequenceno;
             }
 
-            public void setSequenceno(int sequenceno) {
+            public void setSequenceno(String sequenceno) {
                 this.sequenceno = sequenceno;
             }
 
@@ -210,27 +210,27 @@ public class TrainNumBean {
                 this.departuretime = departuretime;
             }
 
-            public int getStoptime() {
+            public String getStoptime() {
                 return stoptime;
             }
 
-            public void setStoptime(int stoptime) {
+            public void setStoptime(String stoptime) {
                 this.stoptime = stoptime;
             }
 
-            public int getCosttime() {
+            public String getCosttime() {
                 return costtime;
             }
 
-            public void setCosttime(int costtime) {
+            public void setCosttime(String costtime) {
                 this.costtime = costtime;
             }
 
-            public int getDistance() {
+            public String getDistance() {
                 return distance;
             }
 
-            public void setDistance(int distance) {
+            public void setDistance(String distance) {
                 this.distance = distance;
             }
 

@@ -27,7 +27,7 @@
         android:layout_weight="1"
         android:textSize="16sp"
         android:textColor="#894733"
-        android:id="@+id/tv_tl_stop"
+        android:id="@+id/tv_tl_end"
         android:text="终到站"
         android:gravity="center"/>
     <TextView
