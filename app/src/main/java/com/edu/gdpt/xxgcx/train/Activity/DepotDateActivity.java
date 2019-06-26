@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.edu.gdpt.xxgcx.train.Adapter.DepotDateAdapter;
@@ -23,6 +24,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.util.List;
 
 public class DepotDateActivity extends AppCompatActivity {
 
@@ -33,7 +35,8 @@ public class DepotDateActivity extends AppCompatActivity {
     private MHandler mHandler;
     private String startText,endText,Data;
     private LinearLayout ll_depot_back;
-
+    private ListView lv_depot_hc;
+    private List<History>histories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,5 +111,9 @@ public class DepotDateActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    private class History {
+        String start,end;
     }
 }

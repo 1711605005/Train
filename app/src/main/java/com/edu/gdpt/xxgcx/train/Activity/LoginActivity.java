@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        dbUtils=DBUtils.getInstance(getApplicationContext());
         initView();
     }
 
@@ -58,6 +59,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     setResult(RESULT_OK,data);
                     finish();
                     return;
+                }else {
+                    Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.tv_login_register:

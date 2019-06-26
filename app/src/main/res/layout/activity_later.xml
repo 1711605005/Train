@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LaterActivity"
+    android:background="@drawable/late">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="应用数据由极速数据提供"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:id="@+id/tv_later_tg"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_later_tg"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="火车票务通时刻表"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:id="@+id/tv_later_intent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="跳过(5)"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="@drawable/later_btn"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

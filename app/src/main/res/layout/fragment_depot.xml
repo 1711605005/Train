@@ -176,12 +176,13 @@
         android:layout_gravity="center"
         android:textSize="18sp"
         android:layout_marginTop="15dp"/>
-    <TextView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tv_depot_hc"
+        android:id="@+id/lv_depot_hc"
         android:gravity="center_horizontal"
         android:textSize="16sp"
-        android:textColor="#000000"/>
+        android:textColor="#000000"
+        android:divider="#ffffff"/>
 
 </LinearLayout>

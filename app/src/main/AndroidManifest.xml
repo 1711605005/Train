@@ -12,18 +12,19 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Activity.TicketDataActivity"></activity>
-        <activity android:name=".Activity.TrainNumDataActivity" />
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.DepotDateActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.LaterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.TicketDataActivity" />
+        <activity android:name=".Activity.TrainNumDataActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.DepotDateActivity" />
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

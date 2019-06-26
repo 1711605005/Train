@@ -52,7 +52,7 @@ public class TrainNumAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public TrainNumViewHolder(@NonNull View itemView) {
             super(itemView);
             num=itemView.findViewById(R.id.tv_tnd_num);
-            costtime=itemView.findViewById(R.id.tv_tnd_costtime);
+            costtime=itemView.findViewById(R.id.tv_tnd_ct);
             start=itemView.findViewById(R.id.tv_tnd_start);
             atime=itemView.findViewById(R.id.tv_tnd_atime);
             stime=itemView.findViewById(R.id.tv_tnd_stime);
