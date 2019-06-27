@@ -35,8 +35,7 @@ public class DepotDateActivity extends AppCompatActivity {
     private MHandler mHandler;
     private String startText,endText,Data;
     private LinearLayout ll_depot_back;
-    private ListView lv_depot_hc;
-    private List<History>histories;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +112,5 @@ public class DepotDateActivity extends AppCompatActivity {
         }
     }
 
-    private class History {
-        String start,end;
-    }
+
 }

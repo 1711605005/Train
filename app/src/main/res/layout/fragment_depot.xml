@@ -176,13 +176,30 @@
         android:layout_gravity="center"
         android:textSize="18sp"
         android:layout_marginTop="15dp"/>
-    <ListView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lv_depot_hc"
-        android:gravity="center_horizontal"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:divider="#ffffff"/>
-
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/ll_depot_hc"
+            android:gravity="center">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_depot_hc"
+                android:gravity="center"
+                android:layout_margin="5dp">
+            </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_depot_delete"
+                android:text="清除所有历史纪录"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#487824"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
